@@ -18,18 +18,12 @@ class Home extends React.Component {
 
   componentDidMount = async () => {
     try {
-      const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.props.match.params.id}`,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk4ZWNhYTYxOWU1ZDAwMTUxZjhmN2QiLCJpYXQiOjE2MjA2MzQ3OTQsImV4cCI6MTYyMTg0NDM5NH0.uEmyf94agpe9Ah6YT4Rinls_egdc0qJQR3PnsoJvS1s",
-          },
-        }
-      )
+      console.log(this.props.match.params.id)
+      const response = await fetch(`https://lnkdn-cln.herokuapp.com/profiles`)
       if (response.ok) {
         const data = await response.json()
-        this.setState({ user: data })
+        // this.setState({ user: data })
+        console.log(data)
       }
     } catch (error) {
       console.log(error)

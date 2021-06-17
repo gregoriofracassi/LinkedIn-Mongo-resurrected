@@ -42,22 +42,22 @@ function PostCard(props) {
                 className="getPost-dropDown-button rounded-circle"
                 as={InputGroup.Prepend}
                 variant="outline-none-secondary"
-                title={<i class="bi bi-three-dots"></i>}
+                title={<i className="bi bi-three-dots"></i>}
                 id="input-group-dropdown-1"
               >
                 <Dropdown.Item href="#">
-                  <i class="bi bi-bookmark"></i> Save
+                  <i className="bi bi-bookmark"></i> Save
                 </Dropdown.Item>
                 <Dropdown.Item href="#">
-                  <i class="bi bi-link-45deg"></i> Copy Link action
+                  <i className="bi bi-link-45deg"></i> Copy Link action
                 </Dropdown.Item>
                 <Dropdown.Item href="#">
-                  <i class="bi bi-eye-slash"></i> I don't want to see this else
-                  here
+                  <i className="bi bi-eye-slash"></i> I don't want to see this
+                  else here
                 </Dropdown.Item>
 
                 <Dropdown.Item href="#">
-                  <i class="bi bi-megaphone"></i> Report
+                  <i className="bi bi-megaphone"></i> Report
                 </Dropdown.Item>
               </DropdownButton>
               <Button className="bg-white border-0"></Button>
@@ -75,7 +75,7 @@ function PostCard(props) {
               <Button className="getPost-like-btn mx-1">
                 <Row>
                   <span>
-                    <i class="bi bi-hand-thumbs-up"></i> Like
+                    <i className="bi bi-hand-thumbs-up"></i> Like
                   </span>
                 </Row>
               </Button>
@@ -83,7 +83,7 @@ function PostCard(props) {
               <Button className="getPost-comment-btn mx-1">
                 <Row>
                   <span>
-                    <i class="bi bi-input-cursor-text"></i> Comment
+                    <i className="bi bi-input-cursor-text"></i> Comment
                   </span>
                 </Row>
               </Button>
@@ -91,7 +91,7 @@ function PostCard(props) {
               <Button className="getPost-share-btn mx-1">
                 <Row>
                   <span>
-                    <i class="bi bi-folder-symlink"></i> Share
+                    <i className="bi bi-folder-symlink"></i> Share
                   </span>
                 </Row>
               </Button>
@@ -99,7 +99,7 @@ function PostCard(props) {
               <Button className="getPost-send-btn mx-1">
                 <Row>
                   <span>
-                    <i class="bi bi-cursor"></i>
+                    <i className="bi bi-cursor"></i>
                     Send
                   </span>
                 </Row>

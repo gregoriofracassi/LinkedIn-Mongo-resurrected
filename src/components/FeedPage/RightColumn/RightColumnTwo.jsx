@@ -1,12 +1,12 @@
-import { Card } from "react-bootstrap";
-import "../Post.css";
+import { Card } from "react-bootstrap"
+import "../Post.css"
 
 export default function RightColumnTwo() {
   return (
     <Card className="RightColumn-card RightColumnTwo-card">
       <Card.Header className="bg-white">
         <span className="pr-2">Today's most viewed courses</span>
-        <i class="bi bi-info-square-fill"></i>
+        <i className="bi bi-info-square-fill"></i>
       </Card.Header>
       <Card.Text className="m-0 p-0  px-3">
         <Card.Text>
@@ -42,5 +42,5 @@ export default function RightColumnTwo() {
         </Card.Text>
       </Card.Text>
     </Card>
-  );
+  )
 }

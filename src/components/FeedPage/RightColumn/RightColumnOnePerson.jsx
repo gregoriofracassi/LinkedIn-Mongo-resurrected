@@ -1,7 +1,7 @@
-import React from "react";
-import "../../Sidebar/Sidebar.css";
-import { Image, Row, Col, Button, Card } from "react-bootstrap";
-import "../Post.css";
+import React from "react"
+import "../../Sidebar/Sidebar.css"
+import { Image, Row, Col, Button, Card } from "react-bootstrap"
+import "../Post.css"
 
 const RightColumnOnePerson = (props) => {
   return (
@@ -26,13 +26,13 @@ const RightColumnOnePerson = (props) => {
             variant="outline-dark"
             size="sm"
           >
-            <span href="#" class="text-decoration-none">
+            <span href="#" className="text-decoration-none">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-plus"
+                className="bi bi-plus"
                 viewBox="0 0 16 16"
                 id="plus-icon"
               >
@@ -44,7 +44,7 @@ const RightColumnOnePerson = (props) => {
         </Col>
       </Row>
     </>
-  );
-};
+  )
+}
 
-export default RightColumnOnePerson;
+export default RightColumnOnePerson

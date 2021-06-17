@@ -66,7 +66,7 @@ export default function Sidebar() {
             <Card.Body> {mapProfileShowMore(randomInteger(45, 49))}</Card.Body>
           </Accordion.Collapse>
           <Card.Header
-            onclick="myFunction()"
+            // onClick="myFunction()"
             id="sidebar-showmore"
             className="p-0 m-0 full-width text-center bg-white"
           >

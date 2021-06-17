@@ -12,9 +12,9 @@ export default function ModalShow(props) {
     <>
       <div onClick={handleShow}>
         {props.formType === "edit" ? (
-          <i class="bi bi-pencil fs-5"></i>
+          <i className="bi bi-pencil fs-5"></i>
         ) : (
-          <i class="bi bi-plus fs-3"></i>
+          <i className="bi bi-plus fs-3"></i>
         )}
       </div>
 
