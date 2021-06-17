@@ -18,11 +18,12 @@ class Home extends React.Component {
 
   componentDidMount = async () => {
     try {
-      console.log(this.props.match.params.id)
-      const response = await fetch(`https://lnkdn-cln.herokuapp.com/profiles`)
+      const response = await fetch(
+        `https://lnkdn-cln.herokuapp.com/profiles/${this.props.match.params.id}`
+      )
       if (response.ok) {
         const data = await response.json()
-        // this.setState({ user: data })
+        this.setState({ user: data })
         console.log(data)
       }
     } catch (error) {
