@@ -10,6 +10,7 @@ class Feeds extends React.Component {
   state = {
     user: {},
     userExperiences: [],
+    switch: false,
   }
 
   componentDidMount = async () => {
@@ -33,6 +34,10 @@ class Feeds extends React.Component {
     }
   }
 
+  switch = () => {
+    this.setState({ switch: !this.state.switch })
+  }
+
   render() {
     console.log(this.state)
     return (
@@ -45,8 +50,11 @@ class Feeds extends React.Component {
                 <LeftColumnHomeFeed user={this.state.user} />
               </Col>
               <Col xs={6}>
-                <AddPost image={this.state.user.image} />
-                <GetPost image={this.state.user.image} />
+                <AddPost image={this.state.user.image} switch={this.switch} />
+                <GetPost
+                  image={this.state.user.image}
+                  switch={this.state.switch}
+                />
               </Col>
               <Col xs={3}>
                 {" "}
