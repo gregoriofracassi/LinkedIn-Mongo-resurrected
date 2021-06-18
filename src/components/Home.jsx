@@ -31,10 +31,10 @@ class Home extends React.Component {
       console.log(error)
     }
 
-    const userId =
-      this.props.match.params.id === "me"
-        ? this.state.user._id
-        : this.props.match.params.id
+    // const userId =
+    //   this.props.match.params.id === "me"
+    //     ? this.state.user._id
+    //     : this.props.match.params.id
 
     try {
       const xpResponse = await fetch(
@@ -65,10 +65,10 @@ class Home extends React.Component {
       console.log(error)
     }
 
-    const userId =
-      this.props.match.params.id === "me"
-        ? this.state.user._id
-        : this.props.match.params.id
+    // const userId =
+    //   this.props.match.params.id === "me"
+    //     ? this.state.user._id
+    //     : this.props.match.params.id
 
     try {
       const xpResponse = await fetch(

@@ -1,6 +1,5 @@
 import { Card, Image, Button, Row, Col, Modal, Form } from "react-bootstrap"
 import "../CardProfile.css"
-import AddPostModal from "./AddPostModal"
 import React from "react"
 
 class AddPost extends React.Component {

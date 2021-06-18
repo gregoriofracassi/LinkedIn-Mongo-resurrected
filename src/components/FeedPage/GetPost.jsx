@@ -1,6 +1,6 @@
 import React from "react"
 import "./Post.css"
-import PostCard from "./PostCard.jsx"
+
 import {
   Container,
   Accordion,
@@ -63,6 +63,7 @@ class GetPost extends React.Component {
         }),
       })
       this.setState({ switch: !this.state.switch })
+      console.log(response)
     } catch (error) {
       console.log(error)
     }
