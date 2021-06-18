@@ -17,6 +17,7 @@ class Home extends React.Component {
   }
 
   componentDidMount = async () => {
+    console.log(process.env.REACT_APP_ENDPOINT)
     try {
       const response = await fetch(
         `https://lnkdn-cln.herokuapp.com/profiles/${this.props.match.params.id}`
@@ -37,13 +38,7 @@ class Home extends React.Component {
 
     try {
       const xpResponse = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk4ZWNhYTYxOWU1ZDAwMTUxZjhmN2QiLCJpYXQiOjE2MjA2MzQ3OTQsImV4cCI6MTYyMTg0NDM5NH0.uEmyf94agpe9Ah6YT4Rinls_egdc0qJQR3PnsoJvS1s",
-          },
-        }
+        `https://lnkdn-cln.herokuapp.com/profiles/${this.props.match.params.id}/experiences`
       )
       if (xpResponse.ok) {
         const xpData = await xpResponse.json()
@@ -60,13 +55,7 @@ class Home extends React.Component {
     }
     try {
       const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.props.match.params.id}`,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk4ZWNhYTYxOWU1ZDAwMTUxZjhmN2QiLCJpYXQiOjE2MjA2MzQ3OTQsImV4cCI6MTYyMTg0NDM5NH0.uEmyf94agpe9Ah6YT4Rinls_egdc0qJQR3PnsoJvS1s",
-          },
-        }
+        `https://lnkdn-cln.herokuapp.com/profiles/${this.props.match.params.id}`
       )
       if (response.ok) {
         const data = await response.json()
@@ -83,13 +72,7 @@ class Home extends React.Component {
 
     try {
       const xpResponse = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${userId}/experiences`,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk4ZWNhYTYxOWU1ZDAwMTUxZjhmN2QiLCJpYXQiOjE2MjA2MzQ3OTQsImV4cCI6MTYyMTg0NDM5NH0.uEmyf94agpe9Ah6YT4Rinls_egdc0qJQR3PnsoJvS1s",
-          },
-        }
+        `https://lnkdn-cln.herokuapp.com/profiles/${this.props.match.params.id}/experiences`
       )
       if (xpResponse.ok) {
         const xpData = await xpResponse.json()
