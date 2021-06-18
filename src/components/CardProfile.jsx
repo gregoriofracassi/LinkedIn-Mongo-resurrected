@@ -16,6 +16,9 @@ class CardProfile extends React.Component {
         `https://lnkdn-cln.herokuapp.com/experiences/`,
         {
           method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
           body: JSON.stringify(this.state.experience),
         }
       )
