@@ -9,35 +9,16 @@ class SearchResults extends React.Component {
     filteredProfiles: [],
   }
 
+  query = `name=${this.props.match.params.query}`
+
   componentDidMount = async () => {
-    this.setState({ query: this.props.match.params.query })
     try {
       const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile`,
-        {
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk4ZWNhYTYxOWU1ZDAwMTUxZjhmN2QiLCJpYXQiOjE2MjA2MzQ3OTQsImV4cCI6MTYyMTg0NDM5NH0.uEmyf94agpe9Ah6YT4Rinls_egdc0qJQR3PnsoJvS1s",
-          },
-        }
+        `https://lnkdn-cln.herokuapp.com/profiles?${this.query}`
       )
       if (response.ok) {
         const data = await response.json()
-        const fullData = (user) =>
-          (
-            user.name +
-            " " +
-            user.surname +
-            " " +
-            user.title +
-            " " +
-            user.area
-          ).toLowerCase()
-        const filteredUsers = data.filter((user) =>
-          fullData(user).includes(this.state.query)
-        )
-        console.log(filteredUsers)
-        this.setState({ filteredProfiles: filteredUsers })
+        this.setState({ filteredProfiles: data.profiles })
       }
     } catch (error) {
       console.log(error)

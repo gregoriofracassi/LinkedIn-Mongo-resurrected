@@ -19,12 +19,10 @@ class ExpEduCard extends React.Component {
     console.log("ciaociao")
     try {
       const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userId}/experiences/${this.state.expId}`,
+        `https://lnkdn-cln.herokuapp.com/experiences/${this.state.expId}`,
         {
           method: "PUT",
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk4ZWNhYTYxOWU1ZDAwMTUxZjhmN2QiLCJpYXQiOjE2MjA2MzQ3OTQsImV4cCI6MTYyMTg0NDM5NH0.uEmyf94agpe9Ah6YT4Rinls_egdc0qJQR3PnsoJvS1s",
             "Content-Type": "application/json",
           },
           body: JSON.stringify(this.state.experience),
@@ -42,13 +40,10 @@ class ExpEduCard extends React.Component {
 
     try {
       const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.userId}/experiences/${this.state.expId}/picture`,
+        `https://lnkdn-cln.herokuapp.com/experiences/${this.state.expId}/picture`,
         {
           method: "POST",
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk4ZWNhYTYxOWU1ZDAwMTUxZjhmN2QiLCJpYXQiOjE2MjA2MzQ3OTQsImV4cCI6MTYyMTg0NDM5NH0.uEmyf94agpe9Ah6YT4Rinls_egdc0qJQR3PnsoJvS1s",
-          },
+
           body: this.state.expImage,
         }
       )
@@ -99,7 +94,7 @@ class ExpEduCard extends React.Component {
     e.preventDefault()
     const file = e.target.files[0]
     let formData = new FormData()
-    formData.append("experience", file)
+    formData.append("expPicture", file)
     this.setState({
       expImage: formData,
     })

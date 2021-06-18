@@ -1,4 +1,4 @@
-import { Card } from "react-bootstrap"
+import { Card, Button } from "react-bootstrap"
 import "../JumboProfile.css"
 import ProfilePicModal from "./ProfilePicModal"
 
@@ -18,12 +18,18 @@ const JumboProfile = (props) => {
             <br />
             Creating synergy between clint expectations and product delivery
           </p>
-          <p className="location-line">
-            {props.area} •{" "}
-            <span className="text-primary">
+          <div className="location-line d-flex justify-content-between">
+            <div className="text-primary">
               <b>75 Connections • Contact info</b>
-            </span>
-          </p>
+            </div>
+            <Button
+              variant="outline-primary"
+              size="sm"
+              onClick={props.downloadCV}
+            >
+              Download CV
+            </Button>
+          </div>
         </Card.Text>
       </Card.Body>
     </Card>

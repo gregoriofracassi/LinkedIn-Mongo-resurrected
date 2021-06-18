@@ -1,20 +1,20 @@
 // import React from "react";
-import React, { Component } from "react";
-import { Modal, Button, Form, Col, Row } from "react-bootstrap";
-import "../CardProfile.css";
+import React, { Component } from "react"
+import { Modal, Button, Form, Col, Row } from "react-bootstrap"
+import "../CardProfile.css"
 
 class AddPostModal extends Component {
   state = {
     show: false,
-  };
+  }
 
   onClickButton = (e) => {
-    e.preventDefault();
-    this.setState({ openModal: true });
-  };
+    e.preventDefault()
+    this.setState({ openModal: true })
+  }
   onCloseModal = () => {
-    this.setState({ openModal: false });
-  };
+    this.setState({ openModal: false })
+  }
 
   render() {
     return (
@@ -75,7 +75,7 @@ class AddPostModal extends Component {
               <Button className="addpostfooterbtn mx-1">
                 <Row>
                   <Col>
-                    <i className="bi bi-camera-video-fill"></i>
+                    <i className="smllytext bi bi-camera-video-fill"></i>
                   </Col>
                 </Row>
               </Button>
@@ -125,8 +125,8 @@ class AddPostModal extends Component {
           </Modal.Body>
         </Modal>
       </>
-    );
+    )
   }
 }
 
-export default AddPostModal;
+export default AddPostModal

@@ -13,24 +13,21 @@ class ProfilePicModal extends Component {
   handleSubmit = async (e) => {
     e.preventDefault()
     const formData = new FormData()
-    formData.append("profile", this.fileInput.current.files[0])
+    formData.append("avatar", this.fileInput.current.files[0])
     console.log(formData)
     console.log("user is", this.props.userId)
     try {
       const response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.props.userId}/picture`,
+        `https://lnkdn-cln.herokuapp.com/profiles/${this.props.userId}/imageupload`,
         {
           method: "POST",
           body: formData,
-          headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk4ZWNhYTYxOWU1ZDAwMTUxZjhmN2QiLCJpYXQiOjE2MjA2MzQ3OTQsImV4cCI6MTYyMTg0NDM5NH0.uEmyf94agpe9Ah6YT4Rinls_egdc0qJQR3PnsoJvS1s",
-          },
         }
       )
       if (response.ok) {
         console.log("image succesfully posted")
       }
+      this.onCloseModal()
     } catch (error) {
       console.log(error, "couldnt post image")
     }

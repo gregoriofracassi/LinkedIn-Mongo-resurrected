@@ -16,11 +16,16 @@ class Home extends React.Component {
     userExperiences: [],
   }
 
+  userId =
+    this.props.match.params.id === "me"
+      ? "60cc390714e1940015400b79"
+      : this.props.match.params.id
+
   componentDidMount = async () => {
     console.log(process.env.REACT_APP_ENDPOINT)
     try {
       const response = await fetch(
-        `https://lnkdn-cln.herokuapp.com/profiles/${this.props.match.params.id}`
+        `https://lnkdn-cln.herokuapp.com/profiles/${this.userId}`
       )
       if (response.ok) {
         const data = await response.json()
@@ -31,14 +36,9 @@ class Home extends React.Component {
       console.log(error)
     }
 
-    // const userId =
-    //   this.props.match.params.id === "me"
-    //     ? this.state.user._id
-    //     : this.props.match.params.id
-
     try {
       const xpResponse = await fetch(
-        `https://lnkdn-cln.herokuapp.com/profiles/${this.props.match.params.id}/experiences`
+        `https://lnkdn-cln.herokuapp.com/profiles/${this.userId}/experiences`
       )
       if (xpResponse.ok) {
         const xpData = await xpResponse.json()
@@ -55,7 +55,7 @@ class Home extends React.Component {
     }
     try {
       const response = await fetch(
-        `https://lnkdn-cln.herokuapp.com/profiles/${this.props.match.params.id}`
+        `https://lnkdn-cln.herokuapp.com/profiles/${this.userId}`
       )
       if (response.ok) {
         const data = await response.json()
@@ -72,11 +72,26 @@ class Home extends React.Component {
 
     try {
       const xpResponse = await fetch(
-        `https://lnkdn-cln.herokuapp.com/profiles/${this.props.match.params.id}/experiences`
+        `https://lnkdn-cln.herokuapp.com/profiles/${this.userId}/experiences`
       )
       if (xpResponse.ok) {
         const xpData = await xpResponse.json()
         this.setState({ userExperiences: xpData })
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  downloadCV = async () => {
+    try {
+      const pdfResponse = await fetch(
+        `https://lnkdn-cln.herokuapp.com/profiles/${this.userId}/pdfDownload`
+      )
+      if (pdfResponse.ok) {
+        console.log(pdfResponse)
+        const win = window.open(pdfResponse.url, "_blank")
+        // win.focus()
       }
     } catch (error) {
       console.log(error)
@@ -98,6 +113,7 @@ class Home extends React.Component {
                   title={this.state.user.title}
                   area={this.state.user.area}
                   image={this.state.user.image}
+                  downloadCV={this.downloadCV}
                 />
                 <CardProfile
                   title="About"

@@ -131,10 +131,15 @@ class GetPost extends React.Component {
                     <hr className="text-muted my-0 py-0" />
                     <Container>
                       <Row>
-                        <Col xs={12}>
+                        <Col xs={1}></Col>
+                        <Col xs={11}>
                           {post.comments &&
                             post.comments.map((comm) => {
-                              return <p>{comm.comment}</p>
+                              return (
+                                <div className="mt-3">
+                                  <p className="smllytext">{comm.comment}</p>
+                                </div>
+                              )
                             })}
                         </Col>
                       </Row>
