@@ -91,7 +91,7 @@ class Home extends React.Component {
       if (pdfResponse.ok) {
         console.log(pdfResponse)
         const win = window.open(pdfResponse.url, "_blank")
-        // win.focus()
+        console.log(win)
       }
     } catch (error) {
       console.log(error)
